@@ -1,0 +1,415 @@
+/* App.module.css */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #2d3748;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #64ffda 0%, #6272a4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.inputSection {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #334155;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.inputContainer {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 3.5rem 1rem 1rem; /* Increased right padding for cancel button */
+  background: #0f172a;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-sizing: border-box; /* Added to fix overflow */
+}
+
+.input:focus {
+  outline: none;
+  border-color: #64ffda;
+  box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.1);
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input::placeholder {
+  color: #64748b;
+}
+
+.cancelBtn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.cancelBtn:hover {
+  color: #e2e8f0;
+  background: #475569;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  justify-content: center;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.addBtn {
+  background: linear-gradient(135deg, #64ffda 0%, #00b4d8 100%);
+  color: #0f172a;
+}
+
+.addBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+}
+
+.saveBtn {
+  background: linear-gradient(135deg, #ffd166 0%, #ff9e64 100%);
+  color: #0f172a;
+}
+
+.saveBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 209, 102, 0.3);
+}
+
+.clearAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  justify-content: center;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.clearAllBtn:hover:not(:disabled) {
+  background: #ef4444;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+}
+
+.todoSection {
+  background: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.stats {
+  padding: 1rem 1.5rem;
+  background: #0f172a;
+  border-bottom: 1px solid #334155;
+}
+
+.count {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.todoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #334155;
+  transition: all 0.2s ease;
+  background: #1e293b;
+  box-sizing: border-box;
+}
+
+.todoItem:hover {
+  background: #1a2436;
+}
+
+.todoItem:last-child {
+  border-bottom: none;
+}
+
+.todoText {
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.5;
+  flex: 1;
+  padding-right: 1rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.editBtn, .deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  width: 36px;
+  height: 36px;
+}
+
+.editBtn {
+  color: #60a5fa;
+  border: 1px solid #334155;
+}
+
+.editBtn:hover:not(:disabled) {
+  background: #1e40af;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.deleteBtn {
+  color: #f87171;
+  border: 1px solid #334155;
+}
+
+.deleteBtn:hover:not(:disabled) {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.editBtn:disabled, .deleteBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.loadingState, .emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.loadingState {
+  color: #94a3b8;
+}
+
+.emptyState {
+  color: #64748b;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.emptyState h3 {
+  color: #e2e8f0;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .inputSection {
+    padding: 1rem;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .primaryBtn, .clearAllBtn {
+    flex: none;
+    width: 100%;
+  }
+  
+  .todoItem {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .todoText {
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  .actions {
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+  
+  .input {
+    padding: 1rem 3rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+  }
+  
+  .heading {
+    font-size: 1.75rem;
+  }
+  
+  .inputSection {
+    padding: 0.75rem;
+  }
+  
+  .input {
+    padding: 0.875rem 2.5rem 0.875rem 0.875rem;
+    font-size: 0.9rem;
+  }
+  
+  .cancelBtn {
+    right: 0.5rem;
+    padding: 0.375rem;
+    width: 28px;
+    height: 28px;
+  }
+}
